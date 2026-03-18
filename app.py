@@ -21,11 +21,11 @@ if plot:
     st.text('Color represents secondary parameter')
     if selected_state=='overall India':
         fig = px.scatter_mapbox(df, lat="Latitude", lon="Longitude", zoom=4,
-                             size=primary,color=secondary,size_max=35,map_style="carto-positron",width=1200,height=700,hover_name='District')
+                             size=primary,color=secondary,size_max=35,mapbox_style="carto-positron",width=1200,height=700,hover_name='District')
         st.plotly_chart(fig)
     else:
         state_df=df[df['State']==selected_state]
         fig = px.scatter_mapbox(state_df, lat="Latitude", lon="Longitude", zoom=6,
-                             size=primary, color=secondary, size_max=25, map_style="carto-positron", width=1200,
+                             size=primary, color=secondary, size_max=25, mapbox_style="carto-positron", width=1200,
                              height=700,hover_name='District')
         st.plotly_chart(fig)
